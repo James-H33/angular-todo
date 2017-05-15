@@ -1,0 +1,19 @@
+
+<ul class="app-todo-list">
+  <app-todo-list-item *ngFor="let todo of todos" [todo]="todo"></app-todo-list-item>
+</ul>
+
+<div class="app-filter row justify-content-around mt-2">
+  <div class="app-filter-item">
+    Todos: {{ todos.length }}
+  </div>
+  <div [ngClass]="{active: filter === 'all'}" class="app-filter-item" (click)="filterTodos('all')">
+    All
+  </div>
+  <div [ngClass]="{active: filter === 'active'}" class="app-filter-item" (click)="filterTodos('active')">
+    Active
+  </div>
+  <div [ngClass]="{active: filter === 'complete'}" class="app-filter-item" (click)="filterTodos('complete')">
+    Completed
+  </div>
+</div>

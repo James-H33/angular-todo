@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+.app-todo {
+  box-shadow: 0px 4px 10px #cacaca;
+  padding: 30px;
+}
+
+.app-todo-header {
+  color: #e68803;
+  font-family: 'Raleway Dots', cursive;
+  font-size: 84px;
+}
+
+.complete {
+  color: #cacaca;
+  text-decoration: line-through;
+}
+
+.app-todo-list {
+  padding: 0;
+}
+
+.app-todo-item {
+  border-bottom: 1px solid #cacaca;
+  padding: 15px 0;
+}
+
+.app-filter { }
+
+.app-filter-item {
+  color:#cacaca;
+  font-size: 15px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.app-filter-item.active {
+  color: #222222;
+  border: 1px solid #e68803;
+  border-radius: 4px;
+}

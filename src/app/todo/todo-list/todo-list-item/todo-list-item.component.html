@@ -1,0 +1,11 @@
+<div class="app-todo-item row">
+  <div (click)="markAsComplete()" class="col-1">
+    <input type="checkbox" name="" value="" [checked]="todo.isComplete ? 'complete' : ''">
+  </div>
+  <div #todoContent [ngClass]="todo.isComplete ? 'complete' : ''" class="col-9">
+    {{ todo.content }}
+  </div>
+  <div (click)="removeTodoItem()" class="col-2">
+    <i class="">X</i>
+  </div>
+</div>
