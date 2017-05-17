@@ -5,7 +5,7 @@
 
 <div class="app-filter row justify-content-around mt-2">
   <div class="app-filter-item">
-    Todos: {{ todos.length }}
+    Todos: {{ todos ? todos.length : 0 }}
   </div>
   <div [ngClass]="{active: filter === 'all'}" class="app-filter-item" (click)="filterTodos('all')">
     All
