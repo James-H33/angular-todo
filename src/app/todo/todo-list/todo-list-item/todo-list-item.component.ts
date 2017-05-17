@@ -1,5 +1,10 @@
-import { TodoService } from '../../../services/todo.service';
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+
+// Models
+import { Todo } from '../../../models/todo.model';
+
+// Services
+import { TodoService } from '../../../services/todo.service';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -7,7 +12,7 @@ import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 })
 
 export class TodoListItemComponent {
-  @Input() todo: any;
+  @Input() todo: Todo;
   @ViewChild('todoContent') todoContent: ElementRef;
 
   constructor(private todoService: TodoService) { }
