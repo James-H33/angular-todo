@@ -15,7 +15,6 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {
     this.todos = this.todoService.todos;
-    // this.todoService.saveTodosToStore();
   }
 
   filterTodos(filter: string) {

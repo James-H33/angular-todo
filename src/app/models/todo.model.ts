@@ -1,5 +1,3 @@
-// {content: 'Go fishing', id: Math.floor(Math.random() * 10000), isComplete: false}, 
-
 export class TodoModel {
   public content: string;
   public id: number;

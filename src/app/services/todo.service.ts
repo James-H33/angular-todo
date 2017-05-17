@@ -50,7 +50,6 @@ export class TodoService {
   saveTodosToStore() {
     let store = window.sessionStorage;
     store.setItem('todos', JSON.stringify(this.todos));
-    // store.setItem('users', '[{username: "James", userId: 1, todos: []}]');
   }
 
 }
