@@ -1,4 +1,4 @@
-export class TodoModel {
+export class Todo {
   public content: string;
   public id: number;
   public isComplete: boolean;

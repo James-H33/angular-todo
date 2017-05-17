@@ -1,5 +1,12 @@
-import { TodoService } from '../../services/todo.service';
 import { Component, OnInit } from '@angular/core';
+
+// Models
+import { Todo } from '../../models/todo.model';
+
+// Services
+import { TodoService } from '../../services/todo.service';
+
+
 
 
 @Component({
@@ -8,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TodoListComponent implements OnInit {
-  todos: object[] = [];
+  todos: Todo[] = [];
   filter: string = 'all';
 
   constructor(private todoService: TodoService) { }

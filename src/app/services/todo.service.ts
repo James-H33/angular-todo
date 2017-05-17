@@ -1,3 +1,5 @@
+import { Todo } from '../models/todo.model';
+
 export class TodoService {
   todos: any[] = [];
 
@@ -6,7 +8,8 @@ export class TodoService {
   }
 
   addTodo(todo: string) {
-    this.todos.push({content: todo, id: Math.floor(Math.random() * 10000), isComplete: false});
+    // this.todos.push({content: todo, id: Math.floor(Math.random() * 10000), isComplete: false});
+    this.todos.push(new Todo(todo, Math.floor(Math.random() * 10000), false));
     this.saveTodosToStore();
   }
 
