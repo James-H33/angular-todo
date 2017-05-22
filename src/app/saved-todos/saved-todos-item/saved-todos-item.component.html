@@ -1,0 +1,8 @@
+<div class="app-todo-item row">
+  <div (click)="onOpenSavedTodosList()" class="col-10">
+    {{ todoList ? todoList.title : 'Something went wrong' }}
+  </div>
+  <div (click)="removeSavedTodoList()" class="col-2">
+    <i class="">X</i>
+  </div>
+</div>

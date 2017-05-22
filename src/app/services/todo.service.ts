@@ -1,14 +1,18 @@
 import { Todo } from '../models/todo.model';
+import { Injectable } from '@angular/core';
+
+// Services
+import { SavedTodosListService } from './saved-todos-list.service';
+
+@Injectable()
 
 export class TodoService {
+
   todos: any[] = [];
 
-  constructor() {
-    this.todos = this.getTodosFromStore() || [];
-  }
+  constructor(private savedTodoListService: SavedTodosListService) { }
 
   addTodo(todo: string) {
-    // this.todos.push({content: todo, id: Math.floor(Math.random() * 10000), isComplete: false});
     this.todos.push(new Todo(todo, Math.floor(Math.random() * 10000), false));
     this.saveTodosToStore();
   }
@@ -20,6 +24,7 @@ export class TodoService {
   } 
 
   getTodos() {
+    this.todos = this.getTodosFromStore() || [];
     return this.todos;
   }
 
@@ -47,12 +52,12 @@ export class TodoService {
   } 
 
   getTodosFromStore() {
-    return JSON.parse(window.sessionStorage.getItem('todos'));
+    console.log(this.savedTodoListService.getActiveTodoList());
+    return this.savedTodoListService.getActiveTodoList();
   }
 
   saveTodosToStore() {
-    let store = window.sessionStorage;
-    store.setItem('todos', JSON.stringify(this.todos));
+    this.savedTodoListService.saveTodosToActiveList(this.todos);
   }
 
 }
